@@ -15,6 +15,6 @@ class M_auth extends CI_Model
   function get_email_user($id)
   {
     $this->db->where('email', $id);
-    return $this->db->get('user')->row();
+    return $this->db->get('users')->row();
   }
 }

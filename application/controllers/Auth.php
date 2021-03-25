@@ -72,10 +72,10 @@ class Auth extends CI_Controller
                 redirect('auth/login', 'refresh');
             } else {
                 $session = array(
-                    'id_users'  => $user->id_users,
-                    'username'  => $user->id_users,
-                    'email'  => $user->id_users,
-                    'level_user'  => $user->id_users,
+                    'id_users'    => $user->id_users,
+                    'username'    => $user->username,
+                    'email'       => $user->email,
+                    'level_user'  => $user->level,
                 );
                 $this->session->set_userdata($session);
                 redirect('dashboard');

@@ -72,13 +72,7 @@
 		<div class="content clearfix">
 			<h1>Member Login</h1>
 
-
-
-
-
-
 			<form action="<?= base_url('auth/proses_login') ?>" method="post">
-
 
 				<p>Sign in to start your session</p>
 				<div class="login-fields">
@@ -88,13 +82,13 @@
 					</div>
 
 					<div class="field">
-						<label for="username">Username</label>
-						<input type="text" id="username" name="username" value="" placeholder="Username" class="login username-field" />
+						<label for="email">Email</label>
+						<input type="text" id="email" name="email" placeholder="Email" class="login username-field" />
 					</div> <!-- /field -->
 
 					<div class="field">
 						<label for="password">Password:</label>
-						<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field" />
+						<input type="password" id="password" name="password" placeholder="Password" class="login password-field" />
 					</div> <!-- /password -->
 
 				</div> <!-- /login-fields -->
@@ -103,7 +97,7 @@
 
 
 					<br>
-					<button class=" btn btn-danger btn-large">Reset</button>
+					<button class="btn btn-danger btn-large">Reset</button>
 
 					<button class="btn btn-success btn-large">Sign In</button>
 
