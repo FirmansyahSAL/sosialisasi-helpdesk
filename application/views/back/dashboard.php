@@ -36,7 +36,9 @@
               <div class="widget-content">
                 <div class="widget big-stats-container">
                   <div class="widget-content">
-                    <h6 class="bigstats">Dashboard <?= $this->session->username; ?></h6>
+
+                    <h6 class="bigstats">Selamat datang <?= $this->session->username; ?></h6>
+
 
                     <div id="big_stats" class="cf">
                       <div class="stat"> <i class="icon-user"></i> <span class="value">851</span> </div>
