@@ -1,4 +1,3 @@
-<!-- /navbar -->
 <div class="subnavbar">
   <div class="subnavbar-inner">
     <div class="container">
@@ -21,10 +20,9 @@
             <li><a href="<?= base_url() ?>assets/back/icons.html">Laporan</a></li>
           </ul>
         </li>
-        <li><a href="<?= base_url() ?>assets/back/shortcodes.html"><i class="icon-code"></i><span>Shortcodes</span> </a> </li>
+        <li><a href="<?= base_url() ?>assets/back/shortcodes.html"><i class="icon-code"></i><span>Shortcodes</span> </a>
+        </li>
       </ul>
     </div>
-    <!-- /container -->
   </div>
-  <!-- /subnavbar-inner -->
 </div>
