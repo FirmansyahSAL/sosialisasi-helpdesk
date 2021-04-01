@@ -23,15 +23,19 @@
                                     <th>Nama Jabatan</th>
                                     <th>action</th>
                                 </tr>
-                                <tbody id="data">
-                                    <tr>
-                                        <td>139</td>
-                                        <td>another goal</td>
-                                        <td>
-                                            <a href="http://localhost/sosialisasi2/admin/editpublikasi/139"><button type='button' class='btn btn-success'>Ubah</button></a>
-                                            <a href="http://localhost/sosialisasi2/admin/deletepublikasi/139"><button type='button' class='btn btn-danger' onclick="return confirm('Are you sure to delete?')">Hapus</button></a>
-                                        </td>
-                                    </tr>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($jabatan as $row) { ?>
+                                        <tr>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $row->jabatan ?></td>
+                                            <td>
+                                                <a href="http://localhost/sosialisasi2/admin/editpublikasi/139"><button type='button' class='btn btn-success'>Ubah</button></a>
+                                                <a href="http://localhost/sosialisasi2/admin/deletepublikasi/139"><button type='button' class='btn btn-danger' onclick="return confirm('Are you sure to delete?')">Hapus</button></a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                     <tr>
                                         <td>140</td>
                                         <td>postinor</td>
