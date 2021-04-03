@@ -7,4 +7,9 @@ class M_jabatan extends CI_Model
     {
         return $this->db->get('jabatan')->result();
     }
+
+    function insert($data)
+    {
+        return $this->db->insert('jabatan', $data);
+    }
 }
