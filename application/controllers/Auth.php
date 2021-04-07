@@ -85,4 +85,12 @@ class Auth extends CI_Controller
             $this->load->view('back/register', $data);
         }
     }
+
+    function logout()
+    {
+        $this->session->sess_destroy();
+        $this->session->set_flashdata('message', '<div class="alert alert-danger"> Anda berhasil Logout', '</div>');
+
+        redirect('auth/login');
+    }
 }
