@@ -8,12 +8,13 @@ class Jabatan extends CI_Controller
     {
         $data['jabatan'] = $this->M_jabatan->get_jabatan();
 
-        $this->template->load('back/template', 'back/jabatan/jabatan', $data);
+        $this->template->load('back/template', 'back/jabatan/data_jabatan', $data);
     }
 
-    function proses_jabatan()
+    function add_jabatan()
     {
-        $this->template->load('back/template', 'back/jabatan/formjabatan');
+        $data['jabatan'] = $this->M_jabatan->get_jabatan();
+        $this->template->load('back/template', 'back/jabatan/formjabatan', $data);
     }
 
     function save_jabatan()

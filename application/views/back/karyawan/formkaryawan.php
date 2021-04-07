@@ -19,11 +19,26 @@
 
                                         <div class="control-group">
                                             <?= validation_errors() ?>
-                                            <form action="<?= base_url('jabatan/save_jabatan') ?>" method="post">
-                                                <label class="control-label">Jabatan</label>
+                                            <form action="<?= base_url('karyawan/save_jabatan') ?>" method="post">
+                                                <label class="control-label">Nik</label>
                                                 <div class="controls">
-                                                    <input type="text" name="jabatan" class="span4">
+                                                    <input type="text" name="users" class="span4">
                                                 </div> <!-- /controls -->
+                                                <br>
+                                                <label class="control-label">Nama Karyawan</label>
+                                                <div class="controls">
+                                                    <input type="text" name="users" class="span4">
+                                                </div>
+                                                <br>
+                                                <label class="control-label">Email</label>
+                                                <div class="controls">
+                                                    <input type="text" name="users" class="span4">
+                                                </div>
+                                                <br>
+                                                <label class="control-label">Status</label>
+                                                <div class="controls">
+                                                    <input type="text" name="users" class="span4">
+                                                </div>
                                         </div> <!-- /control-group -->
 
                                         <br />

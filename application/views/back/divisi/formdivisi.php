@@ -18,11 +18,11 @@
                                     <fieldset>
 
                                         <div class="control-group">
-                                            <?= validation_errors() ?>
-                                            <form action="<?= base_url('jabatan/save_jabatan') ?>" method="post">
-                                                <label class="control-label">Jabatan</label>
+
+                                            <form action="<?= base_url('divisi/save_divisi') ?>" method="POST">
+                                                <label class="control-label">Divisi</label>
                                                 <div class="controls">
-                                                    <input type="text" name="jabatan" class="span4">
+                                                    <input type="text" name="divisi" class="span4">
                                                 </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
 
