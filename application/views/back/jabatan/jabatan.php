@@ -10,36 +10,38 @@
                         <h3>Data Jabatan</h3>
                     </div>
 
+
                     <div class="widget-content">
+                        <div class="span5">
+                            <a href="<?php echo base_url('jabatan/proses_jabatan'); ?>"><button type="button" class="btn btn-primary">Tambah Data</button></a>
 
-                        <a href="<?php echo base_url('jabatan/proses_jabatan'); ?>"><button type="button" class="btn btn-primary">Tambah Data</button></a>
+                            <p>&nbsp;</p>
 
-                        <p>&nbsp;</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hovered">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Jabatan</th>
+                                        <th>action</th>
+                                    </tr>
+                                    <tbody>
+                                        <?php
+                                        $no = 1;
+                                        foreach ($jabatan as $row) { ?>
+                                            <tr>
+                                                <td><?= $no++ ?></td>
+                                                <td><?= $row->jabatan ?></td>
+                                                <td>
+                                                    <a href="<?= base_url('jabatan/edit_jabatan/' . $row->id_jabatan) ?>"><button type='button' class='btn btn-success'>Ubah</button></a>
+                                                    <a href="<?= base_url('jabatan/delete_jabatan/' . $row->id_jabatan) ?>"><button type='button' class='btn btn-danger' onclick="return confirm('Are you sure to delete?')">Hapus</button></a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
 
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hovered">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Jabatan</th>
-                                    <th>action</th>
-                                </tr>
-                                <tbody>
-                                    <?php
-                                    $no = 1;
-                                    foreach ($jabatan as $row) { ?>
-                                        <tr>
-                                            <td><?= $no++ ?></td>
-                                            <td><?= $row->jabatan ?></td>
-                                            <td>
-                                                <a href="http://localhost/sosialisasi2/admin/editpublikasi/139"><button type='button' class='btn btn-success'>Ubah</button></a>
-                                                <a href="http://localhost/sosialisasi2/admin/deletepublikasi/139"><button type='button' class='btn btn-danger' onclick="return confirm('Are you sure to delete?')">Hapus</button></a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-
-                                </tbody>
-                            </table>
-                            <p class='paging' align='center'> </p>
+                                    </tbody>
+                                </table>
+                                <p class='paging' align='center'> </p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
                 <div class="widget ">
                     <div class="widget-header">
                         <i class="icon-user"></i>
-                        <h3>form tambah data</h3>
+                        <h3>form edit data</h3>
                     </div> <!-- /widget-header -->
 
                     <div class="widget-content">
@@ -18,11 +18,13 @@
                                     <fieldset>
 
                                         <div class="control-group">
-
-                                            <form action="<?= base_url('jabatan/save_jabatan') ?>" method="POST">
+                                            <?= $this->session->flashdata('message'); ?>
+                                            <?= validation_errors() ?>
+                                            <form action="<?= base_url('jabatan/update_jabatan') ?>" method="POST">
                                                 <label class="control-label">Jabatan</label>
                                                 <div class="controls">
-                                                    <input type="text" name="jabatan" class="span4">
+                                                    <input type="hidden" name="id_jabatan" value="<?= $jbt->id_jabatan ?>" class="span4">
+                                                    <input type="text" name="jabatan" value="<?= $jbt->jabatan ?>" class="span4">
                                                 </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
 
