@@ -13,6 +13,7 @@
 
                     <div class="widget-content">
                         <div class="span5">
+
                             <a href="<?= base_url('jabatan/add_jabatan') ?>"><button type="button" class="btn btn-primary">Tambah Data</button></a>
 
                             <p>&nbsp;</p>

@@ -12,7 +12,7 @@
 
 
                     <div class="widget-content">
-                        <div class="span5">
+                        <div class="span11">
                             <a href="<?= base_url('divisi/add_divisi') ?>"><button type="button" class="btn btn-primary">Tambah Data</button></a>
 
                             <p>&nbsp;</p>

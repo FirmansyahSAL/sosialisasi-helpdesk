@@ -5,7 +5,7 @@
                 <div class="widget ">
                     <div class="widget-header">
                         <i class="icon-user"></i>
-                        <h3>form tambah data</h3>
+                        <h3>form edit data</h3>
                     </div> <!-- /widget-header -->
 
                     <div class="widget-content">
@@ -18,11 +18,13 @@
                                     <fieldset>
 
                                         <div class="control-group">
+                                            <?= $this->session->flashdata('message'); ?>
                                             <?= validation_errors() ?>
-                                            <form action="<?= base_url('divisi/save_divisi') ?>" method="POST">
-                                                <label class="control-label">Divisi</label>
+                                            <form action="<?= base_url('karyawan/update_karyawan') ?>" method="POST">
+                                                <label class="control-label">Karyawan</label>
                                                 <div class="controls">
-                                                    <input type="text" name="divisi" class="span4">
+                                                    <input type="hidden" name="id_users" value="<?= $jbt->id_users ?>" class="span4">
+                                                    <input type="text" name="karyawan" value="<?= $jbt->karyawan ?>" class="span4">
                                                 </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
 

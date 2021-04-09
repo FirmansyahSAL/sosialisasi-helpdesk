@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Login - Page</title>
+	<title>Login - Sistem Informasi Sosialisasi</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,22 +34,8 @@
 				</a>
 
 				<a class="brand" href="index.html">
-					Bootstrap Admin Template
+					Helpdesk Service
 				</a>
-
-				<div class="nav-collapse">
-					<ul class="nav pull-right">
-						<li class="">
-							<a href="login.html" class="">
-								Already have an account? Login now
-							</a>
-
-						</li>
-					</ul>
-
-				</div>
-				<!--/.nav-collapse -->
-
 			</div> <!-- /container -->
 
 		</div> <!-- /navbar-inner -->
@@ -110,7 +96,7 @@
 
 	<!-- Text Under Box -->
 	<div class="login-extra">
-		Already have an account? <a href="login.html">Login to your account</a>
+		Already have an account? <a href="">Login to your account</a>
 	</div> <!-- /login-extra -->
 
 

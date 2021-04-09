@@ -12,7 +12,7 @@
         </li>
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-credit-card"></i><span>Master Ticket</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="<?= base_url() ?>Ticket">Data Ticket</a></li>
+            <li><a href="<?= base_url('Tiket') ?>">Data Ticket</a></li>
           </ul>
         </li>
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Laporan Ticket</span> <b class="caret"></b></a>
