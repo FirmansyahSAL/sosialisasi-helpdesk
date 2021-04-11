@@ -49,7 +49,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <a href="<?= base_url('tiket/edit_tiket/' . $row->id_tiket) ?>"><button type='button' class='btn btn-success'>Ubah</button></a>
+                                                    <a href="<?= base_url('tiket/detail_tiket/' . $row->no_tiket) ?>"><button type='button' class='btn btn-info'>Detail</button></a>
                                                     <a href="<?= base_url('tiket/delete_tiket/' . $row->id_tiket) ?>"><button type='button' class='btn btn-danger' onclick="return confirm('Are you sure to delete?')">Hapus</button></a>
                                                 </td>
                                             </tr>

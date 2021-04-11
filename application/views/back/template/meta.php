@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Dashboard - Hepldesk Sistem Informasi Sosialisasi</title>
+  <title>Dashboard - Helpdesk Sistem Informasi Sosialisasi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link href="<?= base_url() ?>assets/back/css/bootstrap.min.css" rel="stylesheet">
