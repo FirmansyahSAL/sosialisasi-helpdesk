@@ -8,7 +8,7 @@ class Tiket extends CI_Controller
     {
 
         $data['tiket'] = $this->M_tiket->get_tiket();
-
+        $data['no_tiket'] = $this->M_tiket->no_tiket();
         $this->template->load('back/template', 'back/tiket/tiket', $data);
     }
 
