@@ -12,6 +12,9 @@ class Tiket extends CI_Controller
         $this->template->load('back/template', 'back/tiket/tiket', $data);
     }
 
+    function add_tiket()
+    {
+    }
 
     function detail_tiket($no_tiket)
     {
