@@ -34,4 +34,9 @@ class M_tiket extends CI_Model
         date_default_timezone_set('Asia/Jakarta');
         return date('dmy') . $kd;
     }
+
+    function insert($data)
+    {
+        return $this->db->insert('tiket', $data);
+    }
 }
