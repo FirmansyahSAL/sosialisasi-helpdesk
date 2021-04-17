@@ -39,4 +39,16 @@ class M_tiket extends CI_Model
     {
         return $this->db->insert('tiket', $data);
     }
+
+    function get_id_tiket($id)
+    {
+        $this->db->where('id_tiket', $id);
+        return $this->db->get('tiket');
+    }
+
+    function delete($id)
+    {
+        $this->db->where('id_tiket', $id);
+        $this->db->delete('tiket');
+    }
 }
