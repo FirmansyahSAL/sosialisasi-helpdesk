@@ -51,4 +51,10 @@ class M_tiket extends CI_Model
         $this->db->where('id_tiket', $id);
         $this->db->delete('tiket');
     }
+
+    function update($id, $data)
+    {
+        $this->db->where('id_tiket', $id);
+        $this->db->update('tiket', $data);
+    }
 }
