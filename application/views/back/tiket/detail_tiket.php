@@ -67,104 +67,39 @@
                                 </h7>
                             </div>
 
-                            <div class="span3">
-                                <h7 class="bigstats">
-                                    <div class="stat">
-                                        To
-                                        <strong><?= $tiket->username; ?><br></strong>
-                                        <?= $tiket->divisi ?><br>
-                                        <?= $tiket->jabatan ?><br>
-                                        Phone: (804) 123-5432<br>
-                                        Email: info@almasaeedstudio.com
-
-                                    </div>
-                                </h7>
-                            </div>
-
-
                             <br>
                             <p>&nbsp;</p>
                             <br>
 
-                            <div class="span11">
-                                <div class="row">
-                                    <div class="col-12 table-responsive">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Qty</th>
-                                                    <th>Product</th>
-                                                    <th>Serial #</th>
-                                                    <th>Description</th>
-                                                    <th>Subtotal</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Call of Duty</td>
-                                                    <td>455-981-221</td>
-                                                    <td>El snort testosterone trophy driving gloves handsome</td>
-                                                    <td>$64.50</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Need for Speed IV</td>
-                                                    <td>247-925-726</td>
-                                                    <td>Wes Anderson umami biodiesel</td>
-                                                    <td>$50.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Monsters DVD</td>
-                                                    <td>735-845-642</td>
-                                                    <td>Terry Richardson helvetica tousled street art master</td>
-                                                    <td>$10.70</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Grown Ups Blue Ray</td>
-                                                    <td>422-568-642</td>
-                                                    <td>Tousled lomo letterpress</td>
-                                                    <td>$25.99</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- /.col -->
+                            <div class="row">
+
+                                <div class="span 3">
+                                    <p class="lead">Keluhan User / Karyawan</p>
+                                    <input type="text" class="span6 disabled" value="<?= $tiket->judul_tiket ?>" disabled>
                                 </div>
-                                <!-- /.row -->
+                                <div class="span 3">
+                                    <p class="lead">Keterangan Lengkap</p>
+                                    <input type="text" class="span6 disabled" value="<?= $tiket->judul_tiket ?>" disabled>
+                                </div>
 
-
-                                <div class="row">
-
-                                    <div class="span 3">
-                                        <p class="lead">Keluhan User / Karyawan</p>
+                                <div class="span 3">
+                                    <p class="lead">Tanggapan Dept IT</p>
+                                    <th style="width:50%">
                                         <input type="text" class="span6 disabled" value="<?= $tiket->judul_tiket ?>" disabled>
-                                    </div>
-                                    <div class="span 3">
-                                        <p class="lead">Keterangan Lengkap</p>
-                                        <input type="text" class="span6 disabled" value="<?= $tiket->judul_tiket ?>" disabled>
-                                    </div>
-
-                                    <div class="span 3">
-                                        <p class="lead">Tanggapan Dept IT</p>
-                                        <th style="width:50%">
-                                            <input type="text" class="span6 disabled" value="<?= $tiket->judul_tiket ?>" disabled>
-                                        </th>
-                                    </div>
+                                    </th>
                                 </div>
                             </div>
-                            <!-- /.invoice -->
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-                </section>
-                <!-- /.content -->
-            </div>
-
+                        </div>
+                        <!-- /.invoice -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
         </div>
+
     </div>
+</div>
 </div>
 </div>
 </div>

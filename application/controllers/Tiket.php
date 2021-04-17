@@ -21,8 +21,10 @@ class Tiket extends CI_Controller
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
 
-        if ($this->form_validation->run() == TRUE) {
-            if ($_FILES['gambar_tiket']['error'] <> 3) {
+        if ($this->form_validation->run() == FALSE) {
+            $this->index();
+        } else {
+            if ($_FILES['gambar_tiket']['error'] <> 4) {
 
                 $config['upload_path'] = './assets/images/tiket/';
                 $config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -54,11 +56,25 @@ class Tiket extends CI_Controller
                     $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil di simpan</div>');
                     redirect('tiket', 'refresh');
                 }
+            } else {
+                $data = array(
+                    'no_tiket'       => $this->input->post('no_tiket'),
+                    'judul_tiket'    => $this->input->post('judul_tiket'),
+                    'deskripsi'      => $this->input->post('deskripsi'),
+                    'status_tiket'   => 0,
+                    'users_id'        => $this->session->userdata('id_users'),
+                    //        'gambar_tiket'   => $this->upload->data('file_name'),
+                    'tgl_daftar'     => date('Y-m-d'),
+
+                );
+
+                $this->M_tiket->insert($data);
+                $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil di simpan</div>');
+                redirect('tiket', 'refresh');
             }
-        } else {
-            $this->index();
         }
     }
+
 
     function detail_tiket($no_tiket)
     {
