@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2021 at 03:08 PM
+-- Generation Time: Apr 18, 2021 at 03:47 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -33,6 +33,20 @@ CREATE TABLE `admin` (
   `nama` varchar(45) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detail_tiket`
+--
+
+CREATE TABLE `detail_tiket` (
+  `id_detail` int(11) NOT NULL,
+  `tiket_id` int(11) DEFAULT NULL,
+  `tanggapan` text NOT NULL,
+  `gambar_tanggapan` text NOT NULL,
+  `waktu_tanggapan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -175,7 +189,9 @@ CREATE TABLE `tiket` (
 --
 
 INSERT INTO `tiket` (`id_tiket`, `no_tiket`, `tgl_daftar`, `judul_tiket`, `deskripsi`, `gambar_tiket`, `users_id`, `status_tiket`) VALUES
-(1, '12345', '2021-04-09 12:36:47', 'mantab djiwa dong', 'ini keteranganya', 'tes.jpg', 1, 0);
+(1, '1604210001', '2021-04-15 17:00:00', 'test tiket kesekian', 'cahaya illahi', '160421000120210416105457.jpg', 30, 1),
+(2, '1704210001', '2021-04-16 17:00:00', 'test tiket kedua', 'kedua nih', NULL, 30, 1),
+(3, '1704210002', '2021-04-16 17:00:00', 'kerusakan pada lan card', 'tidak bisa mendeteksi wifi', NULL, 30, 0);
 
 -- --------------------------------------------------------
 
@@ -237,6 +253,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_user`);
 
 --
+-- Indexes for table `detail_tiket`
+--
+ALTER TABLE `detail_tiket`
+  ADD PRIMARY KEY (`id_detail`);
+
+--
 -- Indexes for table `divisi`
 --
 ALTER TABLE `divisi`
@@ -289,6 +311,11 @@ ALTER TABLE `users`
 ALTER TABLE `admin`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `detail_tiket`
+--
+ALTER TABLE `detail_tiket`
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `divisi`
 --
 ALTER TABLE `divisi`
@@ -312,7 +339,7 @@ ALTER TABLE `publikasi`
 -- AUTO_INCREMENT for table `tiket`
 --
 ALTER TABLE `tiket`
-  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
