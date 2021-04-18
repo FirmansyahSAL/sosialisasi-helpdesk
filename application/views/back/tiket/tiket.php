@@ -72,6 +72,10 @@
                                                           class="btn btn-primary">
                                                        Close 
                                                     </a>';
+                                                    } else {
+                                                        echo '<a href="javascript:void(0);" class="btn btn-danger">
+                                                        Closed
+                                                        </a>';
                                                     }
 
                                                     ?>
