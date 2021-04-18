@@ -62,7 +62,6 @@
                                             echo "---";
                                         }
                                         ?>
-                                        <?= $tiket->no_tiket ?>
                                     </div>
                                 </h7>
                             </div>
