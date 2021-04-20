@@ -17,7 +17,7 @@
         </li>
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Laporan Ticket</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="<?= base_url() ?>assets/back/icons.html">Laporan</a></li>
+            <li><a href="<?= base_url('laporan') ?>">Laporan</a></li>
           </ul>
         </li>
       </ul>

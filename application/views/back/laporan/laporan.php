@@ -16,27 +16,29 @@
                             <div class="tab-content">
                                 <form id="edit-profile" class="form-horizontal">
                                     <fieldset>
+                                        <form id="edit-profile" class="form-horizontal">
+                                            <fieldset>
 
-                                        <div class="control-group">
-                                            <form action="<?= base_url('laporan/print_laporan') ?>" method="post" target="_blank">
-                                                <label class="control-label">Tanggal Awal</label>
-                                                <div class="controls">
-                                                    <input type="date" name="tgl_awal" id="tgl_awal" value="<?= date('Y-m-d')?>" class="span4">
-                                                </div> <!-- /controls -->
-                                                <br>
-                                                <label class="control-label">Tanggal Akhir</label>
-                                                <div class="controls">
-                                                    <input type="date" name="tgl_akhir" id="tgl_akhir" value="<?= date('Y-m-d')?>" class="span4">
-                                                </div>
-                                        </div> <!-- /control-group -->
+                                                <div class="control-group">
+                                                    <?= validation_errors() ?>
+                                                    <form action="<?= base_url('laporan/print_laporan') ?>" method="POST">
+                                                        <label class="control-label">Tanggal Awal</label>
+                                                        <div class="controls">
+                                                            <input type="date" name="tgl_awal" class="span4">
+                                                        </div> <!-- /controls -->
+                                                </div> <!-- /control-group -->
 
-                                        <br />
+                                                <br />
 
-                                        <div class="form-actions">
-                                            <button type="submit" class="btn btn-primary">Print</button>
-                                        </div> <!-- /form-actions -->
-                                    </fieldset>
-                                </form>
+                                                <div class="form-actions">
+                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                    <button type="reset" class="btn btn-danger">Reset</button>
+                                                </div> <!-- /form-actions -->
+                                                <br />
+
+                                                <!-- /form-actions -->
+                                            </fieldset>
+                                        </form>
                             </div>
                         </div>
                     </div>
