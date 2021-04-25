@@ -24,7 +24,7 @@
                                                 <label class="control-label">Divisi</label>
                                                 <div class="controls">
                                                     <input type="hidden" name="id_divisi" value="<?= $div->id_divisi ?>" class="span4">
-                                                    <input type="text" name="divisi" value="<?= $div->id_divisi ?>" class="span4">
+                                                    <input type="text" name="divisi" value="<?= $div->divisi ?>" class="span4">
                                                 </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
 
@@ -39,6 +39,7 @@
                             </div>
                         </div>
                     </div>
+
                     <br>
                 </div> <!-- /widget-content -->
             </div> <!-- /widget -->

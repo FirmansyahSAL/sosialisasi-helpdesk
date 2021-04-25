@@ -25,6 +25,7 @@ class M_jabatan extends CI_Model
         $this->db->update('jabatan', $data);
     }
 
+
     function delete($id)
     {
         $this->db->where('id_jabatan', $id);

@@ -12,39 +12,45 @@
 
 
                     <div class="widget-content">
-                        <div class="span5">
+                        <div class="span2">
+                            <div class="tab-content">
+                                <form id="edit-profile" class="form-horizontal">
+                                    <fieldset>
 
-                            <a href="<?= base_url('jabatan/add_jabatan') ?>"><button type="button" class="btn btn-primary">Tambah Data</button></a>
+                                        <div class="control-group">
+                                            <?= $this->session->flashdata('message') ?>
+                                            <?= validation_errors() ?>
 
-                            <p>&nbsp;</p>
+                                            <div class="alert alert-info"> Data Berhasil disimpan </div>
 
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hovered">
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Jabatan</th>
-                                        <th>action</th>
-                                    </tr>
-                                    <tbody>
-                                        <?php
-                                        $no = 1;
-                                        foreach ($jabatan as $row) { ?>
-                                            <tr>
-                                                <td><?= $no++ ?></td>
-                                                <td><?= $row->jabatan ?></td>
-                                                <td>
-                                                    <a href="<?= base_url('jabatan/edit_jabatan/' . $row->id_jabatan) ?>"><button type='button' class='btn btn-success'>Ubah</button></a>
-                                                    <a href="<?= base_url('jabatan/delete_jabatan/' . $row->id_jabatan) ?>"><button type='button' class='btn btn-danger' onclick="return confirm('Are you sure to delete?')">Hapus</button></a>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>
+                                            <form action="<?= base_url('jabatan/save_jabatan') ?>" method="post">
 
-                                    </tbody>
-                                </table>
-                                <p class='paging' align='center'> </p>
+                                                <label class="control-label">Jabatan</label>
+                                                <div class="controls">
+                                                    <input type="text" name="jabatan" class="span4">
+                                                </div> <!-- /controls -->
+                                        </div> <!-- /control-group -->
+
+                                        <br />
+
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                            <button type="reset" class="btn btn-danger">Reset</button>
+                                        </div> <!-- /form-actions -->
+                                    </fieldset>
+                                </form>
                             </div>
+
+
+
                         </div>
+                        <p>&nbsp;</p>
+
+
+
+
                     </div>
+
                 </div>
             </div>
         </div>

@@ -21,11 +21,12 @@
 
                                             <?= $this->session->flashdata('message') ?>
                                             <?= validation_errors() ?>
-                                            <form action="<?= base_url('karyawan/save_karyawan') ?>" method="post">
+                                            <form action="<?= base_url('karyawan/update_profile') ?>" method="post">
 
                                                 <label class="control-label">Nik</label>
                                                 <div class="controls">
-                                                    <input type="text" name="nik" value="<?= $karyawan->nik ?>" class="span4" placeholder="NIK">
+                                                    <input type="hidden" name="id_users" value="<?= $karyawan->id_users ?>" class="span4" placeholder="NIK">
+                                                    <input type="text" readonly name="nik" value="<?= $karyawan->nik ?>" class="span4" placeholder="NIK">
                                                 </div> <!-- /controls -->
                                                 <br>
 
@@ -74,7 +75,7 @@
                                                 <br>
 
                                                 <div class="form-actions">
-                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                    <button type="submit" class="btn btn-primary">Update</button>
                                                     <button type="reset" class="btn btn-danger">Reset</button>
                                                 </div> <!-- /form-actions -->
                                     </fieldset>

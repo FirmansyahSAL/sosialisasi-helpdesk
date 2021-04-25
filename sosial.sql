@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2021 at 03:47 AM
+-- Generation Time: Apr 25, 2021 at 07:59 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -25,19 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id_user` int(11) NOT NULL,
-  `nama` varchar(45) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `detail_tiket`
 --
 
@@ -48,6 +35,14 @@ CREATE TABLE `detail_tiket` (
   `gambar_tanggapan` text NOT NULL,
   `waktu_tanggapan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `detail_tiket`
+--
+
+INSERT INTO `detail_tiket` (`id_detail`, `tiket_id`, `tanggapan`, `gambar_tanggapan`, `waktu_tanggapan`) VALUES
+(5, 1, 'hoka hoke', '20210418105922.jpg', '2021-04-18'),
+(6, 2, 'besok pagi pekerja akan datang', '20210418032708.jpg', '2021-04-18');
 
 -- --------------------------------------------------------
 
@@ -72,8 +67,7 @@ INSERT INTO `divisi` (`id_divisi`, `divisi`) VALUES
 (5, 'Kapal Perang'),
 (6, 'Kapal Niaga'),
 (7, 'Kapal Selam'),
-(8, 'Pemasaran & Penjualan'),
-(9, 'HCM & Command Media');
+(8, 'Pemasaran & Penjualan');
 
 -- --------------------------------------------------------
 
@@ -98,78 +92,6 @@ INSERT INTO `jabatan` (`id_jabatan`, `jabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesan`
---
-
-CREATE TABLE `pesan` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `pesanku` text NOT NULL,
-  `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pesan`
---
-
-INSERT INTO `pesan` (`id`, `nama`, `email`, `pesanku`, `waktu`) VALUES
-(2, 'dent town', 'whatdoyouwant@gmail.com', '<p>assalamualaikuam</p>', '2018-05-14 03:44:19'),
-(3, 'felisa', 'fslaksana@gmail.com', '<p>assalamualaikum wr wb</p>', '2018-05-18 01:46:26');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `publikasi`
---
-
-CREATE TABLE `publikasi` (
-  `kode` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `foto` varchar(50) NOT NULL,
-  `created` date NOT NULL,
-  `tag` enum('Tekhnologi Informasi','Kapal Niaga','Kapal Perang','Akutansi','Desain','Kapal Selam','Pemasaran & Penjualan Bangkap','Rekayasa Umum','Pemeliharaan & Perbaikan','Penjualan Rekumhar','Jaminan Kualitas','Supply Chain','Perbendaharaan','HCM & Command Media','Kawasan') NOT NULL,
-  `aktif` enum('Ya','Tidak') NOT NULL,
-  `hit` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `publikasi`
---
-
-INSERT INTO `publikasi` (`kode`, `title`, `foto`, `created`, `tag`, `aktif`, `hit`) VALUES
-(139, 'another goal', '14282dasar routing.pdf', '2018-08-01', 'Tekhnologi Informasi', 'Ya', 26),
-(140, 'postinor', '487792Cara_Instalasi_Mikrotik_Server.pdf', '2018-08-03', 'Kapal Perang', 'Ya', 5),
-(141, 'hagia sovie', '728576Dasar_Komputer_dan_Pemrograman.pdf', '2018-08-04', 'Kapal Niaga', 'Ya', 0),
-(143, 'amd', '744232buatdb.pdf', '2018-08-08', 'Desain', 'Ya', 0),
-(144, 'intel', '422760jarkom.pdf', '2018-07-31', 'Kawasan', 'Ya', 0),
-(145, 'whatde', '384674mengetik 10 jari.pdf', '2018-08-05', 'Kapal Selam', 'Ya', 0),
-(147, 'ya tuhan', '622344membuataplikasisederhanadenganmicrosoftacces', '2018-08-06', 'Pemasaran & Penjualan Bangkap', 'Ya', 0),
-(148, 'filehelp', '101959Dasar_Komputer_dan_Pemrograman.pdf', '2018-08-02', 'Supply Chain', 'Ya', 0),
-(151, 'database MYSQL', '216186Bab 4 MySQL.PDF', '2018-08-08', 'HCM & Command Media', 'Ya', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tentang`
---
-
-CREATE TABLE `tentang` (
-  `title` varchar(50) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `visi_misi` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tentang`
---
-
-INSERT INTO `tentang` (`title`, `deskripsi`, `visi_misi`) VALUES
-('TENTANG PT PAL INDONESIA', '<p>PT. PAL Indonesia (Persero), bermula dari sebuah galangan kapal yang bernama MARINA dan didirikan oleh pemerintah Belanda pada tahun 1939. Pada masa pendudukan Jepang, Perusahaan ini beralih nama menjadi Kaigun SE 2124. Setelah kemerdekaan, Pemerintah Indonesia menasionalisasi Perusahaan ini dan mengubah namanya menjadi Penataran Angkatan Laut (PAL). Pada tanggal 15 April 1980, Pemerintah mengubah status Perusahaan dari Perusahaan Umum menjadi Perseroan Terbatas sesuai dengan akta No. 12, yang dibuat oleh Notaris Hadi Moentoro, SH. Lokasi Perusahaan di Ujung, Surabaya, dengan kegiatan utama memproduksi kapal perang dan kapal niaga, memberikan jasa perbaikan dan pemeliharaan kapal, serta rekayasa umum dengan spesifikasi tertentu berdasarkan pesanan. Kemampuan rancang bangun yang menonjol dari PAL Indonesia telah memasuki pasaran internasional dan kualitasnya telah diakui dunia. Kapal-kapal produksi PAL Indonesia telah melayari perairan di seluruh dunia.</p>\r\n', '<p>PAL INDONESIA sebagai perusahaan di bidang perkapalan dan produk rekayasa. Dan juga penyedia perawatan dan perbaikan kapal, mengenali kebutuhan untuk menyesuaikan standard kerja yang terbaik; Menyediakan garansi kepada pelanggan untuk kwalitas produk dan layanan Menyediakan garansi kepada pelanggan, semua proses produksi dan output semua simpati tehadap lingkungan. Selalu menekankan pada kesehatan dan keselamatan. Sistem menejemen PAL SMPAL telah diterbitkan dalam upaya memenuhi semua tujuan dan mewakili kumpulan petunjuk kehati-hatian untuk semua kegiatan, operasi kerja dan semua fungsi yang mempengaruhi kwalitas produk, lingkungan dan kesehatan dan keselamatan kerja. Semua petunjuk manual kerja berdasarkan kwalitas standard yang diakui internasional : Organisasi internasional untuk standard ISO 9001 Organisasi intersaional untuk standard ISO 14001 Yang berkaitan dengan kesehatan dan keselamatan kerja seri OHSAS 18001 dan regulasi mentri tenaga kerja No. Per 05/Men/1996. Untuk memastikan bahwa usaha kita benar kita telah menerapkan prinsip tata kelola perusahaan; Oleh karena itu semua karyawan mempunyai tanggung jawab yang sama untuk: Mengutamakan kwalitas produk dan jasa perusahaan. Mencegah polusi di lingkungan dan tempat kerja Meyakinkan bahwa semua upaya dilakukan untuk memastikan standard kesehatan dan keselamatan kerja. Untuk memastikan usaha pada jalur yang benar PAL INDONESIA menerapkan prinsip-prinsip tata kelola perusahaan.</p>');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tiket`
 --
 
@@ -189,9 +111,11 @@ CREATE TABLE `tiket` (
 --
 
 INSERT INTO `tiket` (`id_tiket`, `no_tiket`, `tgl_daftar`, `judul_tiket`, `deskripsi`, `gambar_tiket`, `users_id`, `status_tiket`) VALUES
-(1, '1604210001', '2021-04-15 17:00:00', 'test tiket kesekian', 'cahaya illahi', '160421000120210416105457.jpg', 30, 1),
-(2, '1704210001', '2021-04-16 17:00:00', 'test tiket kedua', 'kedua nih', NULL, 30, 1),
-(3, '1704210002', '2021-04-16 17:00:00', 'kerusakan pada lan card', 'tidak bisa mendeteksi wifi', NULL, 30, 0);
+(1, '1604210001', '2021-04-15 17:00:00', 'test tiket kesekian', 'cahaya illahi', '160421000120210416105457.jpg', 30, 3),
+(2, '1704210001', '2021-04-16 17:00:00', 'test tiket kedua', 'kedua nih', NULL, 30, 3),
+(3, '1704210002', '2021-04-16 17:00:00', 'kerusakan pada lan card', 'tidak bisa mendeteksi wifi', NULL, 30, 0),
+(4, '2304210001', '2021-04-22 17:00:00', 'kerusakan pada lan card', 'ya siap dong', '230421000120210423091402.jpg', 30, 0),
+(5, '2304210002', '2021-04-22 17:00:00', 'gak ada sih', 'apa yah', NULL, 30, 0);
 
 -- --------------------------------------------------------
 
@@ -240,17 +164,11 @@ INSERT INTO `users` (`id_users`, `nik`, `username`, `email`, `password`, `jabata
 (27, NULL, 'hannsa', 'ay@gmail.com', '$2y$10$pPii2gDsJFelrJtDgD8WneRWBgDeeKW3KgAyo6oD13ZChjTt71uPm', '', '', '2021-03-22 12:01:06', '2021-03-22 12:01:06', '', 1, 'active'),
 (28, NULL, 'luffy', 'one@gmail.com', '$2y$10$ItR/Vi96gaNqKsW8F8mzHuE9qH4.cwNasLolNNStgGe8Aex449nlS', '', '', '2021-03-22 12:18:39', '2021-03-22 12:18:39', '', 1, 'active'),
 (29, NULL, 'laporte', 'gini@gmail.com', '$2y$10$hI78WxAJnCvEv46V0anF.OQrDfi8RfZaYWkQNwmFtOv9.XTecS21C', '', '', '2021-03-24 01:09:43', '2021-03-24 01:09:43', '', 1, 'active'),
-(30, NULL, 'logika', 'ika@gmail.com', '$2y$10$sx.VMWYydWFK9qSJTkmjIuXuFUQCaZPQIujm32qcHiSrk2o4nHdQC', '', '', '2021-03-24 13:20:34', '2021-03-24 13:20:34', '', 1, 'active');
+(30, '111111111111', 'logika', 'ika@gmail.com', '$2y$10$sx.VMWYydWFK9qSJTkmjIuXuFUQCaZPQIujm32qcHiSrk2o4nHdQC', '1', '9', '2021-03-24 13:20:34', '2021-04-21 03:25:48', '', 1, 'active');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_user`);
 
 --
 -- Indexes for table `detail_tiket`
@@ -271,24 +189,6 @@ ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indexes for table `pesan`
---
-ALTER TABLE `pesan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `publikasi`
---
-ALTER TABLE `publikasi`
-  ADD PRIMARY KEY (`kode`);
-
---
--- Indexes for table `tentang`
---
-ALTER TABLE `tentang`
-  ADD PRIMARY KEY (`title`);
-
---
 -- Indexes for table `tiket`
 --
 ALTER TABLE `tiket`
@@ -306,40 +206,25 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `detail_tiket`
 --
 ALTER TABLE `detail_tiket`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `divisi`
 --
 ALTER TABLE `divisi`
-  MODIFY `id_divisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_divisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `pesan`
---
-ALTER TABLE `pesan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `publikasi`
---
-ALTER TABLE `publikasi`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
---
 -- AUTO_INCREMENT for table `tiket`
 --
 ALTER TABLE `tiket`
-  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `users`
 --

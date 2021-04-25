@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
+
     public function __construct()
     {
         parent::__construct();
@@ -56,8 +57,14 @@ class Auth extends CI_Controller
 
     function proses_login()
     {
-        $this->form_validation->set_rules('email', 'email', 'trim|required');
-        $this->form_validation->set_rules('password', 'password', 'trim|required');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+        $this->form_validation->set_message('required', '{field} Harus di isi');
+        $this->form_validation->set_message('valid_email', '{field} anda harus valid');
+
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
 
         if ($this->form_validation->run() == TRUE) {
             $user = $this->M_auth->get_email_user($this->input->post('email'));
@@ -82,7 +89,7 @@ class Auth extends CI_Controller
             }
         } else {
             $data['title'] = 'Login pages';
-            $this->load->view('back/register', $data);
+            $this->load->view('back/login', $data);
         }
     }
 

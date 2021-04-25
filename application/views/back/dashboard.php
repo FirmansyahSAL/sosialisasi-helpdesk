@@ -10,6 +10,13 @@
 
           <div class="widget-content">
 
+            <div class="span11">
+              <div class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Selamat Datang<strong> <?= $this->session->username; ?></strong>
+              </div>
+            </div>
+
             <div class="span5">
               <div class="widget widget-nopad">
                 <div class="widget-header"> <i class="icon-list-alt"></i>
@@ -19,7 +26,7 @@
                 <div class="widget-content">
                   <div class="widget big-stats-container">
 
-                    <h6 class="bigstats">Selamat Datang <?= $this->session->username; ?></h6>
+
                     <div id="big_stats" class="cf">
                       <div class="stat"> <i class="icon-anchor"></i> <span class="value">851</span> </div>
                       <!-- .stat -->

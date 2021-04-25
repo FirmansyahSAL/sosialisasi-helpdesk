@@ -3,24 +3,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Jabatan extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        cek_login();
+    }
 
     public function index()
     {
         $data['jabatan'] = $this->M_jabatan->get_jabatan();
-
         $this->template->load('back/template', 'back/jabatan/data_jabatan', $data);
     }
 
-    function add_jabatan()
+    public function add_jabatan()
     {
         $data['jabatan'] = $this->M_jabatan->get_jabatan();
-        $this->template->load('back/template', 'back/jabatan/formjabatan', $data);
+        $this->template->load('back/template', 'back/Jabatan/formjabatan', $data);
     }
 
     function save_jabatan()
     {
         $this->form_validation->set_rules('jabatan', 'Jabatan', 'trim|required');
         $this->form_validation->set_message('required', '{field} Harus di isi');
+
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         if ($this->form_validation->run() == TRUE) {
@@ -29,12 +34,12 @@ class Jabatan extends CI_Controller
             ];
             $this->M_jabatan->insert($data);
             $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
-            redirect('jabatan', 'refresh');
+            redirect('data_jabatan', 'refresh');
         } else {
+
             $this->index();
         }
     }
-
     function edit_jabatan($id)
     {
         $data['jbt'] = $this->M_jabatan->get_id_jabatan($id);

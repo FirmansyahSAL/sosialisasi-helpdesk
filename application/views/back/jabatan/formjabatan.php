@@ -18,8 +18,13 @@
                                     <fieldset>
 
                                         <div class="control-group">
+                                            <?= $this->session->flashdata('message') ?>
                                             <?= validation_errors() ?>
+
+                                            <div class="alert alert-info"> Data Berhasil disimpan </div>
+
                                             <form action="<?= base_url('jabatan/save_jabatan') ?>" method="post">
+
                                                 <label class="control-label">Jabatan</label>
                                                 <div class="controls">
                                                     <input type="text" name="jabatan" class="span4">

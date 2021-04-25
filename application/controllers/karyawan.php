@@ -3,6 +3,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Karyawan extends CI_Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        cek_login();
+    }
+
+
     public function index()
     {
         $data['karyawan'] = $this->M_karyawan->get_karyawan();
@@ -56,6 +64,39 @@ class Karyawan extends CI_Controller
         }
     }
 
+    function update_karyawan()
+    {
+
+        $this->form_validation->set_rules('username', 'Username', 'trim|required');
+
+        $this->form_validation->set_message('required', '{field} Harus di isi');
+        $this->form_validation->set_rules('email', 'email', 'valid_email|is_unique[users.email]|required');
+
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        if ($this->form_validation->run() == TRUE) {
+            $data = array(
+                'nik'          => $this->input->post('nik'),
+                'username'     => $this->input->post('username'),
+                'email'        => $this->input->post('email'),
+                'jabatan_id'     => $this->input->post('jabatan_id'),
+                'divisi_id'     => $this->input->post('divisi_id'),
+                'password'     => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
+                'status_user'  => $this->input->post('status_id'),
+                'level_user'   => $this->input->post('level_user'),
+            );
+
+            $this->M_karyawan->update($this->input->post('id_users'), $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+
+            redirect('data_karyawan', 'refresh');
+        } else {
+
+            $this->add_karyawan();
+        }
+    }
+
+
     function profile($id)
     {
         $data['karyawan'] = $this->M_karyawan->get_id_karyawan($id);
@@ -69,6 +110,36 @@ class Karyawan extends CI_Controller
             $this->template->load('back/template', 'back/profile', $data);
         } else {
             redirect('dashboard', 'refresh');
+        }
+    }
+
+    function update_profile()
+    {
+
+        $this->form_validation->set_rules('username', 'Username', 'trim|required');
+
+        $this->form_validation->set_message('required', '{field} Harus di isi');
+        $this->form_validation->set_rules('email', 'email', 'valid_email|is_unique[users.email]|required');
+
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        if ($this->form_validation->run() == TRUE) {
+            $data = array(
+                'nik'          => $this->input->post('nik'),
+                'username'     => $this->input->post('username'),
+                'email'        => $this->input->post('email'),
+                'jabatan_id'     => $this->input->post('jabatan_id'),
+                'divisi_id'     => $this->input->post('divisi_id'),
+
+            );
+
+            $this->M_karyawan->update($this->input->post('id_users'), $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+
+            redirect('karyawan/profile/' . $this->session->id_users);
+        } else {
+
+            $this->add_karyawan();
         }
     }
 }

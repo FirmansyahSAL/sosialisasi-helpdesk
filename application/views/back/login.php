@@ -55,8 +55,10 @@
 				<p>Sign in to start your session</p>
 				<div class="login-fields">
 
+
 					<div class="control-group">
 						<?= $this->session->flashdata('message') ?>
+						<?= validation_errors() ?>
 					</div>
 
 					<div class="field">
@@ -75,7 +77,6 @@
 
 
 					<br>
-					<button class="btn btn-danger btn-large">Reset</button>
 
 					<button class="btn btn-success btn-large">Sign In</button>
 

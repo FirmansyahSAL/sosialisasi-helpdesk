@@ -10,9 +10,7 @@
             </ul>
           </li>
         </ul>
-        <form class="navbar-search pull-right">
-          <input type="text" class="search-query" placeholder="Pencarian">
-        </form>
+
       </div>
       <!--/.nav-collapse -->
     </div>
