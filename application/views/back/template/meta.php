@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link href="<?= base_url() ?>assets/back/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/back/css/bootstrap-responsive.min.css" rel="stylesheet">
-  <link href="<?= base_url() ?>assets/back/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
   <link href="<?= base_url() ?>assets/back/css/font-awesome.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/back/css/style.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/back/css/pages/dashboard.css" rel="stylesheet">

@@ -52,15 +52,14 @@ class Karyawan extends CI_Controller
                 'level_user'   => 1,
             );
 
-            var_dump($data);
-            //$this->M_auth->insert($data);
+            $this->M_karyawan->insert($data);
 
-            //$this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
 
-            redirect('auth/login', 'refresh');
+            redirect('karyawan', 'refresh');
         } else {
 
-            $this->load->view('back/register');
+            $this->load->view('formkaryawan');
         }
     }
 
@@ -96,6 +95,18 @@ class Karyawan extends CI_Controller
         }
     }
 
+    function delete_karyawan($id)
+    {
+        $delete = $this->M_karyawan->get_id_karyawan($id);
+        if ($delete) {
+            $this->M_karyawan->delete($id);
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+            redirect('karyawan', 'refresh');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Tidak ada', '</div>');
+            redirect('karyawan', 'refresh');
+        }
+    }
 
     function profile($id)
     {

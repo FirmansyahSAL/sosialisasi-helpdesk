@@ -26,24 +26,31 @@
                                                     <input type="hidden" name="id_divisi" value="<?= $div->id_divisi ?>" class="span4">
                                                     <input type="text" name="divisi" value="<?= $div->divisi ?>" class="span4">
                                                 </div> <!-- /controls -->
-                                        </div> <!-- /control-group -->
+                                                <!-- /control-group -->
 
-                                        <br />
+                                                <br />
 
-                                        <div class="form-actions">
-                                            <button type="submit" class="btn btn-primary">Save</button>
-                                            <button type="reset" class="btn btn-danger">Reset</button>
-                                        </div> <!-- /form-actions -->
+                                                <div class="form-actions">
+                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                    <button type="reset" class="btn btn-danger">Reset</button>
+                                                </div> <!-- /form-actions -->
+                                            </form>
+                                        </div>
                                     </fieldset>
                                 </form>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <br>
-                </div> <!-- /widget-content -->
-            </div> <!-- /widget -->
-        </div> <!-- /span8 -->
-    </div> <!-- /row -->
+                <div class="span12">
+
+                    <?php $this->load->view('back/divisi/data_divisi') ?>
+                </div>
+                <br>
+            </div> <!-- /widget-content -->
+        </div> <!-- /widget -->
+    </div> <!-- /span8 -->
+</div> <!-- /row -->
 </div> <!-- /container -->
 </div> <!-- /main-inner -->
