@@ -18,27 +18,31 @@
                                 <div class="widget-content">
                                     <div class="tab table">
                                         <br>
-                                        <div class="tab-content">
 
-                                            <fieldset>
-                                                <form action="<?= base_url('jabatan/save_jabatan') ?>" method="post">
+                                        <div class="tab-pane" id="formcontrols">
+                                            <div id="edit-profile" class="form-horizontal">
+                                                <fieldset>
+                                                    <form action="<?= base_url('jabatan/save_jabatan') ?>" method="post">
 
-                                                    <div class="login-fields">
-                                                        <?= $this->session->flashdata('message'); ?>
-                                                        <?= validation_errors() ?>
-                                                        <div class="field">
-                                                            <label for="firstname">Jabatan:</label>
-                                                            <input type="text" id="jabatan" name="jabatan" value="" placeholder="Jabatan" />
-                                                        </div> <!-- /field -->
+                                                        <div class="control-group">
+                                                            <?= $this->session->flashdata('message'); ?>
+                                                            <?= validation_errors() ?>
 
-                                                    </div> <!-- /login-fields -->
+                                                            <label class="control-label">Jabatan:</label>
+                                                            <div class="controls">
+                                                                <input type="text" id="jabatan" name="jabatan" value="" placeholder="Jabatan" />
+                                                            </div> <!-- /field -->
 
-                                                    <div class="login-actions">
-                                                        <button class="button btn btn-primary btn-large">submit</button>
-                                                    </div> <!-- .actions -->
-                                                </form>
-                                                <br />
-                                            </fieldset>
+                                                        </div> <!-- /login-fields -->
+
+                                                        <div class="form-actions">
+                                                            <button type="submit" class="button btn btn-primary btn-large">submit</button>
+                                                        </div> <!-- .actions -->
+                                                    </form>
+                                                    <br />
+                                                </fieldset>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div> <!-- /widget-content -->
