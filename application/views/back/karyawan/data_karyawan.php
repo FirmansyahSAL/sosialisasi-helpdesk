@@ -16,7 +16,7 @@
                             <a href="<?= base_url('karyawan/add_karyawan') ?>"><button type="button" class="btn btn-primary">Tambah Data</button></a>
 
                             <p>&nbsp;</p>
-
+                            <?= $this->session->flashdata('message') ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hovered">
                                     <tr>

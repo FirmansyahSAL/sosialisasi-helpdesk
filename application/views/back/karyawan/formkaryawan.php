@@ -17,7 +17,7 @@
                                     <fieldset>
 
 
-                                        <?= $this->session->flashdata('message') ?>
+
                                         <?= validation_errors() ?>
 
                                         <form action="<?= base_url('karyawan/save_karyawan') ?>" method="post">

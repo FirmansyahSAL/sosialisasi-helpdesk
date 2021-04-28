@@ -48,7 +48,7 @@ class Karyawan extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan </div>');
             redirect('karyawan', 'refresh');
         } else {
-            $this->index();
+            $this->add_karyawan();
         }
     }
 
