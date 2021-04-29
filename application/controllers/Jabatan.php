@@ -42,7 +42,7 @@ class Jabatan extends CI_Controller
             $data['jabatan'] = $this->M_jabatan->get_jabatan();
             $this->template->load('back/template', 'back/jabatan/edit_jabatan', $data);
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Tidak Ada', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Tidak Ada</div>');
             redirect('jabatan', 'refresh');
         }
     }
@@ -52,10 +52,10 @@ class Jabatan extends CI_Controller
         $delete = $this->M_jabatan->get_id_jabatan($id);
         if ($delete) {
             $this->M_jabatan->delete($id);
-            $this->session->set_flashdata('message', '<div class="alert alert-danger"> Data Berhasil dihapus', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger"> Data Berhasil dihapus</div>');
             redirect('jabatan', 'refresh');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Tidak ada', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Tidak ada</div>');
             redirect('jabatan', 'refresh');
         }
     }
@@ -67,7 +67,7 @@ class Jabatan extends CI_Controller
         ];
 
         $this->M_jabatan->update($this->input->post('id_jabatan'), $data);
-        $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan</div>');
         redirect('jabatan', 'refresh');
     }
 }
