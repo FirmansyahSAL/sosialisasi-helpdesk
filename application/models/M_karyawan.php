@@ -22,7 +22,7 @@ class M_karyawan extends CI_Model
     function update($id, $data)
     {
         $this->db->where('id_users', $id);
-        $this->db->update('users', '$data');
+        $this->db->update('users', $data);
     }
 
 

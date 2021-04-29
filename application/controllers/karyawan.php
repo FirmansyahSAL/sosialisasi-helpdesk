@@ -52,14 +52,27 @@ class Karyawan extends CI_Controller
         }
     }
 
+    function edit_karyawan($id)
+    {
+        $data['users'] = $this->M_karyawan->get_id_user($id);
+        if ($data['users']) {
+            $data['jabatan'] = $this->M_jabatan->get_jabatan();
+            $data['divisi'] = $this->M_divisi->get_divisi();
+            $this->template->load('back/template', 'back/karyawan/edit_karyawan', $data);
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger"> Data tidak ada</div>');
+            redirect('karyawan', 'refresh');
+        }
+    }
+
     function update_karyawan()
     {
 
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
 
         $this->form_validation->set_message('required', '{field} Harus di isi');
-        $this->form_validation->set_rules('email', 'email', 'valid_email|is_unique[users.email]|required');
 
+        $this->form_validation->set_message('valid_email', '{field} anda harus valid');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         if ($this->form_validation->run() == TRUE) {
@@ -70,14 +83,14 @@ class Karyawan extends CI_Controller
                 'jabatan_id'     => $this->input->post('jabatan_id'),
                 'divisi_id'     => $this->input->post('divisi_id'),
                 'password'     => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
-                'status_user'  => $this->input->post('status_id'),
+                'status_user'  => $this->input->post('status_user'),
                 'level_user'   => $this->input->post('level_user'),
             );
 
             $this->M_karyawan->update($this->input->post('id_users'), $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil diupdate', '</div>');
 
-            redirect('data_karyawan', 'refresh');
+            redirect('karyawan', 'refresh');
         } else {
 
             $this->add_karyawan();
