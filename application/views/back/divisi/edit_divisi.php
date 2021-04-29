@@ -14,7 +14,7 @@
                             <br>
 
                             <div class="tab-content">
-                                <form id="edit-profile" class="form-horizontal">
+                                <div id="edit-profile" class="form-horizontal">
                                     <fieldset>
 
                                         <div class="control-group">
@@ -37,16 +37,12 @@
                                             </form>
                                         </div>
                                     </fieldset>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="span12">
-
-                    <?php $this->load->view('back/divisi/data_divisi') ?>
-                </div>
                 <br>
             </div> <!-- /widget-content -->
         </div> <!-- /widget -->

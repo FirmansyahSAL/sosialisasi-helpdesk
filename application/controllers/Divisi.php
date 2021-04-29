@@ -60,7 +60,7 @@ class Divisi extends CI_Controller
         ];
 
         $this->M_divisi->update($this->input->post('id_divisi'), $data);
-        $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil diupdate', '</div>');
         redirect('divisi', 'refresh');
     }
 

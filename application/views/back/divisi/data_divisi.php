@@ -11,12 +11,17 @@
                     </div>
 
 
+
                     <div class="widget-content">
+                        <a href="<?= base_url('divisi/add_divisi') ?>"><button type="button" class="btn btn-primary">Tambah Data</button></a>
+                        <p>&nbsp;</p>
+
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <?= $this->session->flashdata('message'); ?>
+
                         <div class="span11">
-                            <a href="<?= base_url('divisi/add_divisi') ?>"><button type="button" class="btn btn-primary">Tambah Data</button></a>
 
                             <p>&nbsp;</p>
-
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hovered">
                                     <tr>
