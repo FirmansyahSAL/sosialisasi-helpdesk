@@ -17,8 +17,8 @@
 
                                 <p>&nbsp;</p>
 
+                                <?= $this->session->flashdata('message'); ?>
                                 <div class="table-responsive">
-                                    <?= $this->session->flashdata('message'); ?>
                                     <table class="table table-bordered table-hovered">
                                         <tr>
                                             <th>No</th>

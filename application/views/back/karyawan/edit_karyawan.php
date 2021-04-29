@@ -17,8 +17,6 @@
                                     <fieldset>
 
                                         <div class="control-group">
-                                            <?= validation_errors() ?>
-
                                             <form action="<?= base_url('karyawan/update_karyawan') ?>" method="POST">
 
                                                 <label class="control-label">Nik</label>

@@ -18,7 +18,6 @@
                                     <fieldset>
 
                                         <div class="control-group">
-                                            <?= $this->session->flashdata('message'); ?>
                                             <?= validation_errors() ?>
                                             <form action="<?= base_url('jabatan/update_jabatan') ?>" method="POST">
                                                 <label class="control-label">Jabatan</label>
