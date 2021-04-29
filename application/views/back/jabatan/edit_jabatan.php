@@ -14,7 +14,7 @@
                             <br>
 
                             <div class="tab-content">
-                                <form id="edit-profile" class="form-horizontal">
+                                <div id="edit-profile" class="form-horizontal">
                                     <fieldset>
 
                                         <div class="control-group">
@@ -35,14 +35,14 @@
                                             <button type="reset" class="btn btn-danger">Reset</button>
                                         </div> <!-- /form-actions -->
                                     </fieldset>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <br>
-                </div> <!-- /widget-content -->
-            </div> <!-- /widget -->
-        </div> <!-- /span8 -->
-    </div> <!-- /row -->
-</div> <!-- /container -->
+                        <br>
+                    </div> <!-- /widget-content -->
+                </div> <!-- /widget -->
+            </div> <!-- /span8 -->
+        </div> <!-- /row -->
+    </div> <!-- /container -->
 </div> <!-- /main-inner -->

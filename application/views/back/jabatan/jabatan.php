@@ -56,6 +56,8 @@
                                     <h3>Data jabatan</h3>
                                 </div> <!-- /widget-header -->
 
+                                <?= $this->session->flashdata('message'); ?>
+
                                 <div class="widget-content">
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hovered">

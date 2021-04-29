@@ -9,7 +9,6 @@
                     </div> <!-- /widget-header -->
 
                     <div class="widget-content">
-
                         <div class="tab table">
                             <br>
 
@@ -18,11 +17,9 @@
                                     <fieldset>
 
                                         <div class="control-group">
+                                            <?= validation_errors() ?>
+
                                             <form action="<?= base_url('karyawan/update_karyawan') ?>" method="POST">
-
-                                                <?= $this->session->flashdata('message'); ?>
-
-                                                <?= validation_errors() ?>
 
                                                 <label class="control-label">Nik</label>
                                                 <div class="controls">
