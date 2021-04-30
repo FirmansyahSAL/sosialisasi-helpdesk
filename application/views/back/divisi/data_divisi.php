@@ -16,7 +16,6 @@
                         <a href="<?= base_url('divisi/add_divisi') ?>"><button type="button" class="btn btn-primary">Tambah Data</button></a>
                         <p>&nbsp;</p>
 
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <?= $this->session->flashdata('message'); ?>
 
                         <div class="span11">

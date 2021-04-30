@@ -33,7 +33,7 @@ class Divisi extends CI_Controller
                 'divisi' => $this->input->post('divisi')
             ];
             $this->M_divisi->insert($data);
-            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan</div>');
             redirect('divisi', 'refresh');
         } else {
             $this->index();
@@ -47,7 +47,7 @@ class Divisi extends CI_Controller
             $data['divisi'] = $this->M_divisi->get_divisi();
             $this->template->load('back/template', 'back/divisi/edit_divisi', $data);
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Tidak Ada', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Tidak Ada</div>');
             redirect('divisi', 'refresh');
         }
     }
@@ -60,7 +60,7 @@ class Divisi extends CI_Controller
         ];
 
         $this->M_divisi->update($this->input->post('id_divisi'), $data);
-        $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil diupdate', '</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil diupdate</div>');
         redirect('divisi', 'refresh');
     }
 
@@ -69,10 +69,10 @@ class Divisi extends CI_Controller
         $delete = $this->M_divisi->get_id_divisi($id);
         if ($delete) {
             $this->M_divisi->delete($id);
-            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil dihapus</div>');
             redirect('divisi', 'refresh');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Tidak ada', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Tidak ada</div>');
             redirect('divisi', 'refresh');
         }
     }
