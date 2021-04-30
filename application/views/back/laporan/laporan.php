@@ -14,18 +14,28 @@
                             <br>
 
                             <div class="tab-content">
-                                <form id="edit-profile" class="form-horizontal">
+                                <div id="edit-profile" class="form-horizontal">
                                     <fieldset>
-                                        <form id="edit-profile" class="form-horizontal">
+                                        <div id="edit-profile" class="form-horizontal">
                                             <fieldset>
 
                                                 <div class="control-group">
                                                     <?= validation_errors() ?>
                                                     <form action="<?= base_url('laporan/print_laporan') ?>" method="POST">
+
                                                         <label class="control-label">Tanggal Awal</label>
                                                         <div class="controls">
                                                             <input type="date" name="tgl_awal" class="span4">
                                                         </div> <!-- /controls -->
+
+                                                        <p>&nbsp;</p>
+
+                                                        <label class="control-label">Tanggal Akhir</label>
+                                                        <div class="controls">
+                                                            <input type="date" name="tgl_akhir" class="span4">
+                                                        </div> <!-- /controls -->
+
+
                                                 </div> <!-- /control-group -->
 
                                                 <br />
@@ -38,14 +48,14 @@
 
                                                 <!-- /form-actions -->
                                             </fieldset>
-                                        </form>
+                                            </form>
+                                        </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <br>
-                </div> <!-- /widget-content -->
-            </div> <!-- /widget -->
-        </div> <!-- /span8 -->
-    </div> <!-- /row -->
-</div> <!-- /container -->
-</div> <!-- /main-inner -->
+                            <br>
+                        </div> <!-- /widget-content -->
+                    </div> <!-- /widget -->
+                </div> <!-- /span8 -->
+            </div> <!-- /row -->
+        </div> <!-- /container -->
+    </div> <!-- /main-inner -->

@@ -132,8 +132,6 @@ class Karyawan extends CI_Controller
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
 
         $this->form_validation->set_message('required', '{field} Harus di isi');
-        $this->form_validation->set_rules('email', 'email', 'valid_email|is_unique[users.email]|required');
-
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         if ($this->form_validation->run() == TRUE) {
@@ -147,7 +145,7 @@ class Karyawan extends CI_Controller
             );
 
             $this->M_karyawan->update($this->input->post('id_users'), $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil disimpan', '</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info"> Data Berhasil diupdate </div>');
 
             redirect('karyawan/profile/' . $this->session->id_users);
         } else {
