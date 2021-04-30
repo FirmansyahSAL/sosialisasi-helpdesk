@@ -53,49 +53,37 @@
 			<form action="<?= base_url('auth/proses_login') ?>" method="post">
 
 				<p>Sign in to start your session</p>
+
+				<?= $this->session->flashdata('message') ?>
+				<?= validation_errors() ?>
 				<div class="login-fields">
 
-
 					<div class="control-group">
-						<?= $this->session->flashdata('message') ?>
-						<?= validation_errors() ?>
+
+						<div class="field">
+							<label for="email">Email</label>
+							<input type="text" id="email" name="email" placeholder="Email" class="login username-field" />
+						</div> <!-- /field -->
+
+						<div class="field">
+							<label for="password">Password:</label>
+							<input type="password" id="password" name="password" placeholder="Password" class="login password-field" />
+						</div> <!-- /password -->
 					</div>
-
-					<div class="field">
-						<label for="email">Email</label>
-						<input type="text" id="email" name="email" placeholder="Email" class="login username-field" />
-					</div> <!-- /field -->
-
-					<div class="field">
-						<label for="password">Password:</label>
-						<input type="password" id="password" name="password" placeholder="Password" class="login password-field" />
-					</div> <!-- /password -->
 
 				</div> <!-- /login-fields -->
 
 				<div class="login-actions">
-
-
-					<br>
-
+					<p>&nbsp;</p>
 					<button class="btn btn-success btn-large">Sign In</button>
-
 				</div> <!-- .actions -->
-
-
-
 			</form>
-
 		</div> <!-- /content -->
-
 	</div> <!-- /account-container -->
-
 	</div> <!-- /login-extra -->
-
 
 	<script src="<?= base_url() ?>assets/back/js/jquery-1.7.2.min.js"></script>
 	<script src="<?= base_url() ?>assets/back/js/bootstrap.js"></script>
-
 	<script src="<?= base_url() ?>assets/back/js/signin.js"></script>
 
 </body>

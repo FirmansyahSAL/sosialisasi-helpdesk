@@ -112,6 +112,7 @@ class Karyawan extends CI_Controller
 
     function profile($id)
     {
+        cek_login();
         $data['karyawan'] = $this->M_karyawan->get_id_karyawan($id);
 
         if ($data['karyawan']) {

@@ -6,7 +6,7 @@
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <?= $this->session->username; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="<?= base_url('karyawan/profile/' . $this->session->id_users); ?>">Profile User</a></li>
-              <li><a href="<?= base_url('auth/login') ?>">Logout</a></li>
+              <li><a href="<?= base_url('auth/logout') ?>">Logout</a></li>
             </ul>
           </li>
         </ul>

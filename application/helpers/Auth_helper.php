@@ -11,6 +11,6 @@ function cek_login()
         $CI->session->set_flashdata('message', '<div class="alert alert-danger"> Anda harus Login</div>');
 
 
-        redirect('Auth/login');
+        redirect('auth/login');
     }
 }
