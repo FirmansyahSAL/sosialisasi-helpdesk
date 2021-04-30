@@ -50,12 +50,12 @@
 		<div class="content clearfix">
 			<h1>Member Login</h1>
 
+			<?= $this->session->flashdata('message') ?>
+			<?= validation_errors() ?>
 			<form action="<?= base_url('auth/proses_login') ?>" method="post">
 
 				<p>Sign in to start your session</p>
 
-				<?= $this->session->flashdata('message') ?>
-				<?= validation_errors() ?>
 				<div class="login-fields">
 
 					<div class="control-group">
