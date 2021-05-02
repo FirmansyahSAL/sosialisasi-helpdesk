@@ -37,8 +37,13 @@
                                                     <td><?= $row->nik ?></td>
                                                     <td><?= $row->username ?></td>
                                                     <td><?= $row->email ?></td>
-                                                    <td><?= $row->status_user ?></td>
-
+                                                    <td>
+                                                        <?php if ($row->status_user == '1') {
+                                                            echo 'Active';
+                                                        } else {
+                                                            echo 'Non Active';
+                                                        } ?>
+                                                    </td>
                                                     <td>
                                                         <a href="<?= base_url('karyawan/edit_karyawan/' . $row->id_users) ?>"><button type='button' class='btn btn-success'>Ubah</button></a>
                                                         <a href="<?= base_url('karyawan/delete_karyawan/' . $row->id_users) ?>"><button type='button' class='btn btn-danger' onclick="return confirm('Are you sure to delete?')">Hapus</button></a>

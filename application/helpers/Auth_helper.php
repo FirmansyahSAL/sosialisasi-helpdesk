@@ -14,3 +14,14 @@ function cek_login()
         redirect('auth/login');
     }
 }
+
+function is_it()
+{
+    $CI = &get_instance();
+
+    $tipeuser = $CI->session->level_user;
+    if ($tipeuser == '2') {
+        return $tipeuser;
+    }
+    return null;
+}
