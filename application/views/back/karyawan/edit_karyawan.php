@@ -70,7 +70,7 @@
                                                 <label class="control-label">Status User</label>
                                                 <div class="controls">
                                                     <select name="status_user" class="span4">
-                                                        <option value="">Status User</option>
+
                                                         <option value="1" <?= $users->status_user == '1' ? 'selected' : '' ?>>Active</option>
                                                         <option value="0" <?= $users->status_user == '0' ? 'selected' : '' ?>>Non Active</option>
                                                     </select>
@@ -80,7 +80,7 @@
                                                 <label class="control-label">Level User</label>
                                                 <div class="controls">
                                                     <select name="level_user" class="span4">
-                                                        <option value="">Level User</option>
+
                                                         <option value="1" <?= $users->level_user == '1' ? 'selected' : '' ?>>IT</option>
                                                         <option value="2" <?= $users->level_user == '2' ? 'selected' : '' ?>>Staff</option>
                                                     </select>
